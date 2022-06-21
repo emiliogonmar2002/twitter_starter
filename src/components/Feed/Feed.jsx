@@ -8,6 +8,7 @@ export default function Feed(props) {
   return (
     <div className="col feed">
       <TweetBox 
+        tweets={props.tweets}
         setTweets={props.setTweets}
         userProfile={props.userProfile}
         />
