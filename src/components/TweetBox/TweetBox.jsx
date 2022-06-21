@@ -6,13 +6,15 @@ export default function TweetBox(props) {
   const handleOnSubmit = () => {
     let newTweet = {
       id : props.tweets.length,
-      name : userProfile.name,
-      handle : userProfile.handle,
+      name : props.userProfile.name,
+      handle : props.userProfile.handle,
       text : '',
       comments : 0,
       likes : 0,
       retweets : 0,
     }
+
+    console.log(newTweet)
 
     props.setTweets((curr) => [...curr,newTweet])
   }
