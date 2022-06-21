@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Fragment } from "react"
 import Tweet from "../Tweet/Tweet"
 import TweetBox from "../TweetBox/TweetBox"
 import "./Feed.css"
@@ -6,8 +7,8 @@ import "./Feed.css"
 export default function Feed(props) {
   return (
     <div className="col feed">
-      {/* UPDATE TWEET BOX PROPS HERE */}
       <TweetBox 
+        tweets={props.tweets}
         setTweets={props.setTweets}
         userProfile={props.userProfile}
         />
@@ -18,7 +19,16 @@ export default function Feed(props) {
         </p>
       </div>
 
-      <div className="twitter-feed">{/* ADD CODE HERE */}</div>
+      <div className="twitter-feed">
+        {props.tweets.map((tweet) => {
+        return(
+          <React.Fragment key={tweet.id}>
+            <Tweet
+              tweet={tweet}
+              />
+          </React.Fragment>
+        )
+      })}</div>
     </div>
   )
 }
