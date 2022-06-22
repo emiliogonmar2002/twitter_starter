@@ -34,9 +34,12 @@ export default function TweetBox(props) {
 
       <div className="tweet-box-footer">
         <TweetBoxIcons />
-        <TweetCharacterCount />
+        <TweetCharacterCount 
+          tweetText={props.tweetText}
+          />
         <TweetSubmitButton 
           handleOnSubmit={handleOnSubmit}
+          tweetText={props.tweetText}
           />
       </div>
     </div>
@@ -63,7 +66,12 @@ export function TweetSubmitButton(props) {
   return (
     <div className="tweet-submit">
       <i className="fas fa-plus-circle"></i>
-      <button className="tweet-submit-button" onClick={props.handleOnSubmit}>Tweet</button>
+      {console.log(props.tweetText)}
+      <button
+        disabled={
+          props.tweetText!=undefined && (props.tweetText.length > 140 || props.tweetText.length === 0)
+        } 
+        className="tweet-submit-button" onClick={props.handleOnSubmit}>Tweet</button>
     </div>
   )
 }
