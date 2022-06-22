@@ -26,7 +26,7 @@ export default function TweetBox(props) {
     <div className="tweet-box">
       <TweetInput 
         value={props.tweetText}
-        handleOnSubmit={handleOnTweetTextChange}
+        handleOnChange={handleOnTweetTextChange}
         />
 
       <div className="tweet-box-footer">
