@@ -13,13 +13,16 @@ export default function TweetBox(props) {
       id : props.tweets.length,
       name : props.userProfile.name,
       handle : props.userProfile.handle,
-      text : '',
+      text : props.tweetText,
       comments : 0,
       likes : 0,
       retweets : 0,
     }
 
     props.setTweets((curr) => [...curr,newTweet])
+
+    // Reset textTweet
+    props.setTweetText('')
   }
 
   return (
