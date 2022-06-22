@@ -10,6 +10,7 @@ export default function App() {
 
   const [userProfile, setUserProfile] = useState(codepathUserProfile);
   const [tweets, setTweets] = useState([firstTweet]);
+  const [tweetText, setTweetText] = useState('')
 
   return (
     <div className="app">
@@ -24,6 +25,8 @@ export default function App() {
           tweets={tweets}
           setTweets={setTweets}
           userProfile={userProfile}
+          tweetText={tweetText}
+          setTweetText={setTweetText}
           />
         <Advertisements />
       </main>
