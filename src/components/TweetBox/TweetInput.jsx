@@ -7,7 +7,6 @@ export default function TweetInput(props) {
       <AvatarIcon />
 
       <textarea name="new-tweet-input" type="text" placeholder="What's Happening?" value={props.value} onChange={props.handleOnChange}></textarea>
-      {console.log(props.value)}
       <SmileIcon />
     </div>
   )
