@@ -11,6 +11,8 @@ export default function Feed(props) {
         tweets={props.tweets}
         setTweets={props.setTweets}
         userProfile={props.userProfile}
+        tweetText={props.tweetText}
+        setTweetText={props.setTweetText}
         />
 
       <div className="see-new-tweets beet">
